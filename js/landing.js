@@ -146,12 +146,6 @@ function checkBoxListener2(e) {
     drawPies();
 }
 
-// function kingdomSizer(e) {
-//     kingdomSize = parseInt(e.target.value);
-//     let minSum = dom.mins.map(el => parseInt(el.value)).reduce((a, b) => {return a + b}, 0)
-//     console.log(minSum)
-// }
-
 document.addEventListener('DOMContentLoaded', e => {
     kingdomSize = 10;
     document.querySelectorAll('input[name="select-set"]')
