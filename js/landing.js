@@ -118,7 +118,7 @@ function selectListener(e) {
             maxEl.selectedIndex = parseInt(minEl.value) + 1
         }
     }
-    kingdomSizer();
+    // kingdomSizer();
     refreshData();
     drawPies();
 }
@@ -141,25 +141,26 @@ function checkBoxListener2(e) {
         minEl.setAttribute('disabled', 'disabled');
         maxEl.setAttribute('disabled', 'disabled')
     }
-    kingdomSizer();
+    // kingdomSizer();
     refreshData();
     drawPies();
 }
 
-function kingdomSizer(e) {
-    kingdomSize = parseInt(e.target.value);
-    let minSum = dom.mins.map(el => parseInt(el.value)).reduce((a, b) => {return a + b}, 0)
-    console.log(minSum)
-}
+// function kingdomSizer(e) {
+//     kingdomSize = parseInt(e.target.value);
+//     let minSum = dom.mins.map(el => parseInt(el.value)).reduce((a, b) => {return a + b}, 0)
+//     console.log(minSum)
+// }
 
 document.addEventListener('DOMContentLoaded', e => {
+    kingdomSize = 10;
     document.querySelectorAll('input[name="select-set"]')
     .forEach(checkbox => {
         checkbox.addEventListener('click', checkBoxListener2)
     })
-    document.getElementById('kingdom-size').addEventListener('input', kingdomSizer)
+    // document.getElementById('kingdom-size').addEventListener('input', kingdomSizer)
     document.getElementById('kingdom-cruncher-btn').addEventListener('click', selectKingdom)
-    kingdomSize = 10;
+    
     dom = {
         mins: Array.from(document.querySelectorAll('select.min')),
         maxs: Array.from(document.querySelectorAll('select.max')),
